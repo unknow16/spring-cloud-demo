@@ -1,3 +1,10 @@
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password # issue 1408
+
 server:
   port: 8761
   
@@ -6,4 +13,4 @@ eureka:
     register-with-eureka: false # 配置不作为eureka client,默认eureka server会自带client用来和其他server通信
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://user:password@localhost:8761/eureka  # http://localhost:8761/eureka
