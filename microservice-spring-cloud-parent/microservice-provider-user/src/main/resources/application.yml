@@ -27,3 +27,6 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    metadata-map:
+      zone: ABC #eureka可以理解的元数据
+      fuyi: BBC #不会影响客户端的行为
