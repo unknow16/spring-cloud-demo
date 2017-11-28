@@ -1,4 +1,4 @@
-package com.fuyi.config;
+package com.fuyi.cloud;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +9,7 @@ import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 
 @Configuration
+@ExcludeFromComponentScan
 public class CustomRibbonClientConfiguration {
 
 	@Autowired
