@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.fuyi.cloud.entity.User;
 
 @FeignClient("microservice-provider-user")
+//@FeignClient(name="microservice-provider-user", fallback="fallbackMethod")
 public interface UserFeignClient {
 
 	/**
