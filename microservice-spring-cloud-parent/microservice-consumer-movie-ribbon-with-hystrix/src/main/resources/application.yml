@@ -1,6 +1,6 @@
 server:
   port: 3333
-  context-path: /ribbon
+#  context-path: /ribbon
   
 spring:
   application:
@@ -14,7 +14,7 @@ eureka:
     # metadata-map:
       # management.port: ${management.port:8081} # actuator 的端口
     prefer-ip-address: true
-    home-page-url-path: /ribbon
+    # home-page-url-path: /ribbon
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     
 # hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
