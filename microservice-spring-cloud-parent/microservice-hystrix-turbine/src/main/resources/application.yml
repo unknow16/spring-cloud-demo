@@ -1,0 +1,33 @@
+server:
+  port: 4444
+  
+spring:
+  application:
+    name: microservice-hystrix-turbine
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password@localhost:8761/eureka # http://user:password@localhost:8761/eureka # http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+# turbine 监听 eureka中的microservice-consumer-movie-ribbon-with-hystrix服务
+# 响应数据url:  http://localhost:4444/turbine.stream?cluster=MICROSERVICE-CONSUMER-MOVIE-RIBBON-WITH-HYSTRIX
+# 可以用hystrix dashboard可视化监控该url服务状态
+turbine:
+  aggregator:
+    clusterConfig: default
+  # appConfig: microservice-consumer-movie-ribbon-with-hystrix,microservice-consumer-movie-feign-hystrix
+  appConfig: microservice-consumer-movie-ribbon-with-hystrix
+  clusterNameExpression: "'default'"
+
+turbine.instanceUrlSuffix.default: ribbon/hystrix.stream
+  
+
+logging:
+  level:
+    root: info
+    com.netflix.turbine.monitor: DEBUG
