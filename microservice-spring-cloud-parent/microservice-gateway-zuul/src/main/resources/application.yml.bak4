@@ -13,3 +13,12 @@ eureka:
       prefer-ip-address: true
       instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
      
+# 每个服务的公共前缀作为prefix
+# http://192.168.0.165:5555/simple/microservice-provider-user/1
+zuul:
+  prefix: /simple
+  strip-prefix: false 
+  
+logging:
+  level:
+    com.netflix: debug

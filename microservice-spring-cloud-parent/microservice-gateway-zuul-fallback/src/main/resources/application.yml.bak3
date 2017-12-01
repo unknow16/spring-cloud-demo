@@ -12,4 +12,18 @@ eureka:
   instance:
       prefer-ip-address: true
       instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
-     
+      
+zuul:
+  routes:
+    users:
+      path: /users/**
+      service-id: microservice-provider-user
+
+# 负载均衡配置
+ribbon:
+  eureka:
+    enabled: false
+    
+microservice-provider-user:
+  ribbon:
+    listOfServers: http://localhost:1111/,http://localhost:1112
