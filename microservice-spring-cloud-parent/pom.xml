@@ -28,10 +28,12 @@
 		<module>microservice-discovery-eureka</module>
 		<module>microservice-discovery-eureka-ha</module>
 		<module>microservice-gateway-zuul</module>
+		<module>microservice-gateway-zuul-filter</module>
 		<module>microservice-gateway-zuul-reg-exp</module>
 		<module>microservice-gateway-zuul-fallback</module>
 		<module>microservice-hystrix-turbine</module>
 		<module>microservice-hystrix-dashboard</module>
+		<module>microservice-sidecar</module>
 	</modules>
 
 	<dependencyManagement>
