@@ -7,3 +7,9 @@ spring:
       server:
         git:
           uri: https://github.com/unknow16/spring-cloud-demo
+          
+# /{application}/{profile}[/{label}]
+# /{application}-{profile}.yml
+# /{label}/{application}-{profile}.yml
+# /{application}-{profile}.properties
+# /{label}/{application}-{profile}.properties
