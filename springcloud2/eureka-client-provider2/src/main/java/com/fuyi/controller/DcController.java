@@ -14,11 +14,11 @@ public class DcController {
 /*    @Autowired
     DiscoveryClient discoveryClient;*/
 
-    @GetMapping("/dc")
+    @GetMapping("/api/dc")
     public String dc() {
         //String services = "Services: " + discoveryClient.getServices();
         //System.out.println(services);
-        return "provider-v1";
+        return "provider222";
     }
 
 }
