@@ -1,20 +1,17 @@
-server:
-  port: 7788
-  
 spring:
   cloud:
     config:
-      username: fuyi
-      password: pwd
-      profile: test
+      #uri: http://localhost:7777
+      #username: fuyi
+      #password: pwd
+      profile: prod
       label: master
       discovery:
         enabled: true
         service-id: config-server
   application:
-    name: foo
- 
-# 注册到eureka server    
+    name: simple
+    
 eureka:
   client:
     service-url:

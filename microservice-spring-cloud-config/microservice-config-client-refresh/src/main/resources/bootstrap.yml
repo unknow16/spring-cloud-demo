@@ -1,5 +1,5 @@
 server:
-  port: 7788
+  port: 7799
   
 spring:
   cloud:
@@ -12,7 +12,7 @@ spring:
         enabled: true
         service-id: config-server
   application:
-    name: foo
+    name: simple
  
 # 注册到eureka server    
 eureka:

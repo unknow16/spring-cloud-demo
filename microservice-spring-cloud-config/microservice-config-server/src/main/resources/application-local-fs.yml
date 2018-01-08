@@ -5,18 +5,20 @@ security:
   basic:
     enabled: true
   user:
-    name: fuyi
     password: pwd
   
 spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://gitee.com/fuyiyi/{application} # {application}-{profile}
-  application:
-    name: config-server
-          
+        native:
+          search-locations: classpath:/config
+
+# 注册到eureka server     
 eureka:
   client:
     service-url:
