@@ -2,6 +2,7 @@ package com.fuyi;
 
 import com.fuyi.fallback.MyFallbackProvider;
 import com.fuyi.filter.AccessFilter;
+import com.fuyi.filter.ThrowErrorFilter;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -15,6 +16,11 @@ public class GatewayZuulApplication {
 
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(GatewayZuulApplication.class).web(true).run(args);
+	}
+
+	@Bean
+	public ThrowErrorFilter throwErrorFilter() {
+		return new ThrowErrorFilter();
 	}
 
 /*	@Bean

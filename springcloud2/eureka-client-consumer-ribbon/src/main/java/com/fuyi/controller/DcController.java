@@ -19,7 +19,7 @@ public class DcController {
     @GetMapping("/consumer")
     public String dc() {
 
-        String url = "http://eureka-client-provider/dc";
+        String url = "https://eureka-client-provider/dc";
 
         //使用restTemplate请求数据
         return restTemplate.getForObject(url, String.class);
