@@ -16,12 +16,26 @@ public class DcController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
+
     @GetMapping("/consumer")
     public String dc() {
 
-        String url = "https://eureka-client-provider/dc";
+        String url = "http://eureka-client-provider/dc";
 
         //使用restTemplate请求数据
         return restTemplate.getForObject(url, String.class);
+    }
+
+
+    @GetMapping("/loadBal")
+    public void loadBal() {
+        ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client-provider");
+        System.out.println("serviceId : " + serviceInstance.getServiceId() + "，port : " + serviceInstance.getPort() + "，Uri : " + serviceInstance.getUri());
+
+        ServiceInstance serviceInstance2 = loadBalancerClient.choose("eureka-client-provider2");
+        System.out.println("serviceId : " + serviceInstance2.getServiceId() + "，port : " + serviceInstance2.getPort() + "，Uri : " + serviceInstance2.getUri());
+
     }
 }
