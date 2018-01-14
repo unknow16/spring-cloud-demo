@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @SpringBootApplication
 //@RibbonClient(name = "eureka-client-provider", configuration = CustomRibbonClientConfiguration.class)
-@RibbonClients(defaultConfiguration = CustomRibbonClientConfiguration.class)
+//@RibbonClients(defaultConfiguration = CustomRibbonClientConfiguration.class)
 @ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = ExculdeFromComponentScan.class)})
 public class EurekaClientConsumerRibbonApplication {
 

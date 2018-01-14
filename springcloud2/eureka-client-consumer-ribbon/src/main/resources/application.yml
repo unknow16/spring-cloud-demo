@@ -1,0 +1,31 @@
+
+spring:
+  application:
+    name: eureka-client-consumer-ribbon
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+server:
+  port: 3001
+
+eureka-client-provider2:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule #com.netflix.loadbalancer.RandomRule
+    listOfServers: http://localhost:2004
+eureka-client-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    listOfServers: http://localhost:2001
+
+
+ribbon:
+  eureka:
+   enabled: false
+  eager-load:
+    enabled: true
+    clients: eureka-client-provider2,eureka-client-provider
