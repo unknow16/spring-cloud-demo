@@ -16,6 +16,8 @@
 		<module>eureka-client-provider</module>
 		<module>eureka-server</module>
 		<module>gateway-zuul</module>
+		<module>trace-1</module>
+		<module>trace-2</module>
 	</modules>
 
 </project>
