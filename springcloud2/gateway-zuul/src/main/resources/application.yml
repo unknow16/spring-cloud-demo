@@ -5,7 +5,24 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1001/eureka/
+      defaultZone: http://user:password123@localhost:1001/eureka/
+
 
 server:
   port: 6001
+endpoints:
+  routes:
+    enabled: true
+management:
+  security:
+    enabled: true
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password
+zuul:
+  prefix: /api
+
+
